@@ -7,7 +7,7 @@ import pandas as pd
 
 def collect_product_data(api_url, product_ids, batch_size = 1000):
     total_products = len(product_ids)
-    for i in range(100000, total_products, batch_size):
+    for i in range(0, total_products, batch_size):
         batch_num = i//batch_size
         output_path = os.path.curdir + f'/products_data/products_batch_{batch_num}.json'
         if os.path.exists(output_path):
